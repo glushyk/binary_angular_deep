@@ -1,13 +1,23 @@
-<html ng-app="app">
+<!DOCTYPE html>
+<html>
 	<head>
+		<meta charset="utf-8">
+		<title>Binary Academy</title>
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-resource.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.js"></script>
 	</head>
-	<body>
-		<script type="text/javascript" src="js/list.module.js"></script>
-		<script type="text/javascript" src="js/listController.js"></script>
-		<script type="text/javascript" src="js/listFactory.js"></script>
+	<body ng-app="thumbList">
+	<div id="container" ng-controller="ListController as list">
+		<h1 class="listTitle">thumbnail list</h1>
+		<div id="thumb" ng-repeat="thumb in list.thumbs | limitTo:150">
+			<div show thumb="thumb"></div>
+		</div>
+	</div>
+		<script type="text/javascript" src="list/list.module.js"></script>
+		<script type="text/javascript" src="list/httpRequest.js"></script>
+		<script type="text/javascript" src="list/listController.js"></script>
+		<script type="text/javascript" src="list/dir.js"></script>
 	</body>
 </html>
